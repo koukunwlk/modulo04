@@ -1,15 +1,27 @@
 const express = require('express')
 const routes = express.Router()
+const instructors = require('./instructors')
 
-routes.get('/', (req, res)=>{
+routes.get('/', (req, res) => {
     return res.redirect('/instructors')
 })
 
-routes.get('/instructors', (req, res)=>{
+routes.get('/instructors', (req, res) => {
     return res.render('./instructors/index')
 })
 
-routes.get('/members', (req, res)=>{
+routes.get('/instructors/create', (req, res) => {
+    return res.render('./instructors/create')
+})
+
+routes.get('/instructors/:id', instructors.show)
+
+routes.get('/instructors/:id/edit', instructors.edit)
+
+
+routes.post("/instructors", instructors.post)
+
+routes.get('/members', (req, res) => {
     return res.render('/members')
 })
 
@@ -44,9 +56,9 @@ server.get('/courses/:id', (req, res)=>{
     if(!content){
         return res.send("Content not found")
     }
-    
+
     return res.render('courses', {content})
-    
+
 })
 
 server.use((req, res)=>{

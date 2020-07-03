@@ -117,7 +117,7 @@ header{
     color: var(--primary-color);
 }
 
-.details .item div:nth-child(2) span{
+.details span{
     padding: 8px 8px ;
     background-color: var(--secondary-color) ;
     border-radius: 16px;
@@ -128,4 +128,45 @@ header{
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
+}
+
+
+/* === FORM === */
+
+input{
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"]{
+    width: initial;
+    margin-right: 4px;
+    
+}
+
+
+input::placeholder{
+    font-size: 16px;
+    font-weight: normal;
+}
+button[type="submit"], a.button{
+    padding: 8px 32px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    margin-top: 16px;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+a.button{
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
 }
