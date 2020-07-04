@@ -170,3 +170,8 @@ a.button{
     text-align: center;
     text-decoration: none;
 }
+
+button.btn-delete{
+    color:  white;
+    background: lightcoral;
+}
