@@ -133,7 +133,7 @@ header{
 
 /* === FORM === */
 
-input{
+input, select{
     width: 100%;
     padding: 8px;
     outline: none;
@@ -222,7 +222,7 @@ tbody tr td:first-child span{
     box-shadow: 3px 1px 6px -4px black;
     border: 2px solid white;
 }
-tbody tr td:last-child a{
+tbody tr td:last-child a, .table-container > a{
     background-color: var(--primary-color);
     padding: 8px 16px;
     text-decoration: none;
@@ -232,7 +232,11 @@ tbody tr td:last-child a{
     border-radius: 4px;
     transition: filter 150ms;
 }
-
+.table-container > a{
+    display: block;
+    margin-bottom: 16px;
+    float: right;
+}
 .table-container thead tr th:last-child{
     text-align: center;
 }
@@ -242,3 +246,4 @@ td:last-child{
 tbody tr td:last-child a:hover{
     filter: brightness(90%);
 }
+
