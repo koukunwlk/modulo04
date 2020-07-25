@@ -153,13 +153,13 @@ input::placeholder{
     font-size: 16px;
     font-weight: normal;
 }
-button[type="submit"], a.button{
+.table-container .header a, button[type="submit"]{
     padding: 8px 32px;
     background-color: var(--primary-color);
     border-radius: 4px;
     margin-top: 16px;
-    width: 100%;
     color: white;
+    text-decoration: none;
     font-size: 16px;
     cursor: pointer;
 }
@@ -247,3 +247,33 @@ tbody tr td:last-child a:hover{
     filter: brightness(90%);
 }
 
+/* ==== FILTERS ==== */
+
+.table-container .header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #eee ;
+    padding-bottom: 16px;
+}
+
+.table-container .header a{
+    margin: 0;
+    width: 166px;
+}
+.table-container .header form button{
+    margin: 0;
+}
+.table-container .header input{
+   border: 1px solid #eee;
+   padding: 4px 8px;
+   box-sizing: border-box;
+}
+
+.table-container .header form{
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 8px;
+}

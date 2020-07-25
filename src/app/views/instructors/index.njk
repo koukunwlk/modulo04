@@ -2,12 +2,25 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/instructors/create">Novo Instrutor</a>
+        <div class="header">
+            <a class="button" href="/instructors/create">Novo Instrutor</a>
+            <form action="/instructors" method= "GET">
+                <input type="text" 
+                       name="filter"
+                       value ="{{filter}}"
+                       placeholder= "Nome ou Atendimento"
+                       class="button"
+                >
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+        
         <table width="100%">
             <thead>
                 <tr>
                     <th>Insturctor</th>
                     <th>Acompanhamento</th>
+                    <th>Atendimento</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -18,6 +31,8 @@
                             <span style="background-image: url({{instructor.avatar_url}})"></span>
                             {{instructor.name}}</td>
                         <td>{{instructor.services}}</td>
+                        <td>{{instructor.total_students}}</td>
+
                         <td><a href="/instructors/{{instructor.id}}">Ver</a></td>
                     </tr>
                 {% endfor %}
